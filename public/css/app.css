@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace, Times, serif;
+}
+
+.container {
+    max-width: 100%;
+    /* Full width on small devices */
+    padding: 0 1rem;
+    /* Add some padding on the sides */
+    margin: 0 auto;
+    /* Center the container */
+    box-sizing: border-box;
+    /* Include padding and border in width */
+}
+
+table {
+    width: 100%;
+    /* border-collapse: collapse; */
+    border: 3px solid black;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+thead {
+    /* background-color: #4CAF50; */
+    color: gray;
+}
+
+thead th {
+    padding: 12px 15px;
+}
+
+tbody tr {
+    font-weight: 800;
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+tbody td {
+    padding: 12px 15px;
+}
+
+tfoot {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tfoot td {
+    padding: 12px 15px;
+    text-align: right;
+}
+.pagination-footer {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+button {
+    font-size: 1rem;
+    color: blue;
+    background-color: rgb(120, 174, 225);
+    border: 2px solid blue;
+    padding: 0.1rem 1rem;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.1s linear;
+}
+
+#login-form>button:hover {
+    background-color: rgb(97, 162, 223);
+    box-shadow: 1px 2px 7px 0px rgb(120, 174, 225);
+}
+
+#login-form>button:active {
+    transform: translateY(1px);
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 4px solid rgb(209, 170, 54);
+}
+
+#header-left {
+    display: flex;
+    align-items: center;
+}
+
+#header-logo {
+    font-size: 0.8rem;
+    color: rgb(209, 170, 54);
+    padding: 0.3rem 1rem;
+    border: 3px solid rgb(209, 170, 54);
+    font-weight: 700;
+    border-radius: 3px;
+}
+
+#header-logo>span {
+    font-size: 0.9rem;
+}
+
+#header-title {
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#header-logout-btn {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#page-container {
+    border: 4px solid black;
+    margin-top: 100px;
+    padding-bottom: 3rem;
+    border-radius: 4px;
+}
+
+#login-form-wrapper {
+    margin-top: 4rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+#invite-client {
+    margin-top: 4rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+#invite-client button {
+    margin-top: 1.5rem;
+}
+
+#login-form > button {
+    margin-top: 1.5rem;
+}
+
+label {
+    font-size: 1rem;
+    display: block;
+    font-weight: 700;
+    margin-top: 1.5rem;
+}
+
+input {
+    font-size: 1rem;
+    display: block;
+    padding-left: 0.5rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+
+.input-error {
+    display: block;
+    color: red;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+
+/* ===================super admin dashboard================== */
+#super-admin-dashboard-wrapper {
+    margin-top: 4rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+#s-a-section-1-header {
+    display: flex;
+    justify-content: space-between;
+}
+.td-email {
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+
+
+
+/* Media Queries for Larger Screens */
+@media (min-width: 576px) {
+
+    /* Small devices (e.g., smartphones in landscape) */
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* Medium devices (e.g., tablets) */
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+
+    /* Large devices (e.g., laptops/desktops) */
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    /* Extra large devices (e.g., large desktops) */
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    /* XXL devices */
+    .container {
+        max-width: 1320px;
+    }
+}
