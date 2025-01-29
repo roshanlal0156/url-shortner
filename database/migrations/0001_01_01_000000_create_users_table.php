@@ -16,11 +16,13 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->enum('role', ['super_admin', 'admin', 'member']);
-            $table->bigInteger('client_id');
+            $table->unsignedBigInteger('client_id');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            // $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

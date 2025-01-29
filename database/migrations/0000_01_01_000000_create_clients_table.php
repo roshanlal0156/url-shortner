@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('clients', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('id',true);
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamps();
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('clients_tabel');
+        Schema::dropIfExists('clients');
     }
 };

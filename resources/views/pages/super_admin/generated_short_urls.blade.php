@@ -60,7 +60,7 @@
                     </table>
 
                     <!-- Pagination -->
-                    {{ $shortUrls->appends(request()->query())->links() }}
+                    {{-- {{ $shortUrls->appends(request()->query())->links() }} --}}
                     <div class="pagination-footer">
                         <div class="pagination-wrapper">
                             <div> <span>{{ 'Showing ' . $shortUrls->firstItem() . ' to ' . $shortUrls->lastItem() . ' of ' . $shortUrls->total() . ' results' }}
