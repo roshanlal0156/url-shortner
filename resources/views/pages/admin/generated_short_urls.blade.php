@@ -5,12 +5,12 @@
 @section('content')
     <div id="page-container">
         @include('components/header', ['pageTitle' => 'Dashboard', 'showLogout' => false])
-        <div id="super-admin-dashboard-wrapper">
-            <div id="s-a-section-1">
-                <div id="s-a-section-1-header">
-                    <div>Generated Short URLs</div>
+        <div id="admin-generated-short-urls">
+            <div id="a-section-1">
+                <div id="a-section-1-header">
+                    <div>Gnerated Short URLs</div>
                     <div id="download-n-filter">
-                        <form method="GET" action="{{ route('sa.generatedShortUrls') }}">
+                        <form method="GET" action="{{ route('a.generateShortUrls') }}">
                             <select name="duration" id="duration" onchange="this.form.submit()">
                                 <option value="">All</option>
                                 <option value="today" {{ request('duration') == 'today' ? 'selected' : '' }}>Today</option>
@@ -37,7 +37,7 @@
                                     Hits
                                 </th>
                                 <th>
-                                    Client
+                                    Created By
                                 </th>
                                 <th>
                                     Created On
@@ -47,20 +47,16 @@
                         <tbody>
                             @foreach ($shortUrls as $url)
                                 <tr>
+                                    <td>{{ $url->long_url }}</td>
                                     <td><a href="{{ url('/re/' . $url->short_url) }}"
                                             target="_blank">{{ url('/re/' . $url->short_url) }}</a></td>
-                                    <td>{{ $url->long_url }}</td>
                                     <td>{{ $url->hits }}</td>
-                                    <td>{{ $url->client_name }}</td>
-                                    {{-- <td>{{ $url->created_at }}</td> --}}
-                                    <td>{{ \Carbon\Carbon::parse($url->created_at)->format('d M Y') }}</td>
+                                    <td>{{ $url->createdBy ? $url->createdBy->name : 'Unknown' }}</td>
+                                    <td>{{ $url->created_at->format('d M Y') }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
-
-                    <!-- Pagination -->
-                    {{ $shortUrls->appends(request()->query())->links() }}
                     <div class="pagination-footer">
                         <div class="pagination-wrapper">
                             <div> <span>{{ 'Showing ' . $shortUrls->firstItem() . ' to ' . $shortUrls->lastItem() . ' of ' . $shortUrls->total() . ' results' }}

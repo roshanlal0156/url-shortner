@@ -3,7 +3,10 @@
     padding: 0;
     font-family: 'Courier New', Courier, monospace, Times, serif;
 }
-
+.pagination-wrapper {
+    display: flex;
+    gap: 2rem;
+}
 .container {
     max-width: 100%;
     /* Full width on small devices */
@@ -158,6 +161,30 @@ button {
 #invite-client button {
     margin-top: 1.5rem;
 }
+#invite-member {
+    margin-top: 4rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+#invite-member button {
+    margin-top: 1.5rem;
+}
+#generate-short-url-form {
+    margin-top: 4rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+#generate-short-url-form button {
+    margin-top: 1.5rem;
+}
+#admin-generated-short-urls {
+    margin-top: 4rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
 
 #login-form > button {
     margin-top: 1.5rem;
@@ -189,6 +216,11 @@ input {
     font-weight: 600;
 }
 
+#download-n-filter {
+    display: flex;
+    gap: 1rem;
+}
+
 
 /* ===================super admin dashboard================== */
 #super-admin-dashboard-wrapper {
@@ -203,6 +235,16 @@ input {
 .td-email {
     font-weight: normal;
     margin-top: 10px;
+}
+/* =================== admin dashboard================== */
+#admin-dashboard-wrapper {
+    margin-top: 4rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+#a-section-1-header {
+    display: flex;
+    justify-content: space-between;
 }
 
 

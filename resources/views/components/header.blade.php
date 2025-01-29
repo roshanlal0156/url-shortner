@@ -8,6 +8,6 @@
         <div id="header-title">{{ $pageTitle }}</div>
     </div>
     @if (auth()->check())
-    <div id="header-logout-btn">Logout</div>
+    <a href="{{ route('logout') }}" ><div id="header-logout-btn">Logout</div></a>
     @endif
 </div>

@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('clients_tabel', function (Blueprint $table) {
+        Schema::create('short_urls', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->text('long_url');
+            $table->string('short_url');
+            $table->integer('hits')->default(0);
+            $table->bigInteger('created_by');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('clients_tabel');
+        Schema::dropIfExists('short_urls');
     }
 };
