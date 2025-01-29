@@ -38,7 +38,7 @@ class SuperAdminController extends Controller
                 DB::raw('COUNT(short_urls.short_url) as total_urls'),
                 DB::raw('SUM(short_urls.hits) as total_hits'),
                 DB::raw('COUNT(users.id) as total_users')
-            )
+            )->orderBy('users.created_at', 'desc')
             ->paginate(2);
         $query = DB::table('short_urls')->join('users', 'users.id', '=', 'short_urls.created_by')
             ->join('clients', 'clients.id', '=', 'users.client_id')
