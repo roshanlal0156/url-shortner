@@ -21,6 +21,16 @@ To set up and run the project, follow these steps:
    DB_DATABASE=url_shortner_rl
    DB_USERNAME=root
    DB_PASSWORD=
+
+   MAIL_MAILER=smtp
+   MAIL_HOST=smtp.gmail.com
+   MAIL_PORT=587
+   MAIL_USERNAME=Your_email_here
+   MAIL_PASSWORD=your_password_here
+   MAIL_ENCRYPTION=tls
+   MAIL_FROM_ADDRESS=your_email_here
+   MAIL_FROM_NAME="${APP_NAME}"
+
 4. **Generate Application Encryption Key**
    ```bash
    php artisan key:generate
