@@ -21,4 +21,4 @@ Route::get('/m/dashboard', [MemberController::class, 'dashboard'])->name('m.dash
 
 Route::get('/generate', [ShortUrlController::class, 'getGenerateShortUrlForm'])->name('generate-form');
 Route::get('/a/generated-short-urls', [AdminController::class, 'generatedShortUrls'])->name('a.generateShortUrls')->middleware('role:admin');
-Route::get('/a/members', [AdminController::class, 'members'])->name('a.members')->middleware('role:super_admin');
+Route::get('/a/members', [AdminController::class, 'members'])->name('a.members')->middleware('role:admin');
