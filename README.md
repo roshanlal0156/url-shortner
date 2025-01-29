@@ -30,8 +30,8 @@ To set up and run the project, follow these steps:
 6. **Seed the Database**
    ```bash
    php artisan db:seed
-7.**Super Admin Credentials**
-  ```bash
+7. **Super Admin Credentials**
+   ```bash
    For testing, use the following credentials to log in as the super admin:
    Email: superadmin@gmail.com
    Password: 1234 (same for all users for testing)
