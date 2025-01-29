@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\LoginInvite;
 use App\Models\ShortUrl;
 use App\Models\User;
 use Carbon\Carbon;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
@@ -112,9 +114,8 @@ class AdminController extends Controller
         DB::beginTransaction();
 
         try {
-            $pass = '1234';
-            // $pass = random_bytes(5);
-            // Mail::to($data['email'])->send(new LoginInvite($data['email'], $pass));
+            $pass = rand(99999, 9999999);
+            Mail::to($data['email'])->send(new LoginInvite($data['email'], $pass));
 
             $user = Auth::user();
             $clientId = $user->client_id;

@@ -11,6 +11,7 @@ use Illuminate\Queue\SerializesModels;
 
 class LoginInvite extends Mailable
 {
+    use Queueable, SerializesModels;
     private $userName;
     private $password;
     /**
@@ -39,11 +40,7 @@ class LoginInvite extends Mailable
     {
         return new Content(
             view: 'login_invite',
-            with: [
-                'userName' => $this->userName,
-                'password' => $this->password,
-                'loginUrl' => route('home'),
-            ]
+            with: ['userName' => $this->userName, 'password' => $this->password, 'loginUrl' => route('home')]
         );
     }
 

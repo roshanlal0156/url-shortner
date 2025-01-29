@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login Invite</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
-    <h1>Hello {{ $userName }},</h1>
-    <p>You have been invited to log in to our platform. Please use the link below to access your account:</p>
-    <a href="{{ $loginUrl }}">Login Now</a>
-    <p>password: {{ $password }}</p>
-    <p>If you did not request this invite, please ignore this email.</p>
-    <p>Thank you,<br> The {{ config('app.name') }} Team</p>
+    <p>Hi</p>
+    <p>You are invited to access short url portal</p>
+    <p>Username: {{ $userName }}</p>
+    <p>Password: {{ $password }}</p>
+    <p>Login url: {{ $loginUrl }} </p>
 </body>
 </html>

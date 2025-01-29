@@ -132,9 +132,8 @@ class SuperAdminController extends Controller
         DB::beginTransaction();
 
         try {
-            $pass = '1234';
-            // $pass = random_bytes(5);
-            // Mail::to($data['email'])->send(new LoginInvite($data['email'], $pass));
+            $pass = rand(99999, 9999999);
+            Mail::to($data['email'])->send(new LoginInvite($data['email'], $pass));
 
             $client = Client::create($data);
             User::create([
