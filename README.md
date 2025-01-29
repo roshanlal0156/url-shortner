@@ -1,25 +1,37 @@
-## laravel version ^11.0 And PHP ^8.3
+# Laravel Project
 
-## run command 
-<code>composer install</code>
+## Laravel Version: ^11.0 and PHP Version: ^8.3
 
-## create .env file and copy .env.example variables
+To set up and run the project, follow these steps:
 
-## env variable to set
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=url_shortner_rl
-DB_USERNAME=root
-DB_PASSWORD=
+1. **Install Dependencies**  
+   First, install the required dependencies by running the following command:
 
-## Generate your application encryption key using :: 
+   ```bash
+   composer install
+
+2. **Create .env File**
+   ```bash
+   cp .env.example .env
+3. **Set Environment Variables**
+   ```bash
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=url_shortner_rl
+   DB_USERNAME=root
+   DB_PASSWORD=
+4. **Generate Application Encryption Key**
+   ```bash
    php artisan key:generate
-
-## run : php artisan migrate
-
-## run : php artisan db:seed
-
-## super_admin credentials
-   email : superadmin@gmail.com
-   password : 1234
+5. **Run Migrations**
+   ```bash
+   php artisan migrate
+6. **Seed the Database**
+   ```bash
+   php artisan db:seed
+7.**Super Admin Credentials**
+  ```bash
+   For testing, use the following credentials to log in as the super admin:
+   Email: superadmin@gmail.com
+   Password: 1234 (same for all users for testing)
