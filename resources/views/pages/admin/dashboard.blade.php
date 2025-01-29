@@ -51,8 +51,8 @@
                                     <td><a href="{{ url('/re/' . $url->short_url) }}"
                                             target="_blank">{{ url('/re/' . $url->short_url) }}</a></td>
                                     <td>{{ $url->hits }}</td>
-                                    <td>{{ $url->createdBy ? $url->createdBy->name : 'Unknown' }}</td>
-                                    <td>{{ $url->created_at->format('d M Y') }}</td>
+                                    <td>{{ $url->created_by }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($url->created_at)->format('d M Y') }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

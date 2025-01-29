@@ -18,7 +18,10 @@ class AdminController extends Controller
 {
     public function dashboard(Request $request)
     {
-        $query = ShortUrl::with('createdBy'); // 10 per page
+        // $query = ShortUrl::with('createdBy'); // 10 per page
+        $query = DB::table('short_urls')->join('users', 'users.id', '=', 'short_urls.created_by')
+        ->where('users.client_id', Auth::user()->client_id);
+        // $query->where()
 
         if ($request->has('duration')) {
             $duration = $request->input('duration');
@@ -40,7 +43,7 @@ class AdminController extends Controller
             return $this->downloadCsv($query->get());
         }
 
-        $shortUrls = $query->orderBy('created_at', 'desc')->paginate(10)->appends(['duration' => $request->input('duration')]);
+        $shortUrls = $query->orderBy('short_urls.created_at', 'desc')->select(['short_urls.long_url', 'short_urls.short_url', 'short_urls.hits', 'short_urls.created_at', 'users.name as created_by'])->paginate(10)->appends(['duration' => $request->input('duration')]);
 
         $members = DB::table('short_urls')
             ->rightJoin('users', 'users.id', '=', 'short_urls.created_by')  // Corrected join condition
@@ -59,7 +62,8 @@ class AdminController extends Controller
     }
     public function generatedShortUrls(Request $request)
     {
-        $query = ShortUrl::with('createdBy'); // 10 per page
+        $query = DB::table('short_urls')->join('users', 'users.id', '=', 'short_urls.created_by')
+        ->where('users.client_id', Auth::user()->client_id);
 
         if ($request->has('duration')) {
             $duration = $request->input('duration');
@@ -81,7 +85,7 @@ class AdminController extends Controller
             return $this->downloadCsv($query->get());
         }
 
-        $shortUrls = $query->orderBy('created_at', 'desc')->paginate(10)->appends(['duration' => $request->input('duration')]);
+        $shortUrls = $query->orderBy('short_urls.created_at', 'desc')->select(['short_urls.long_url', 'short_urls.short_url', 'short_urls.hits', 'short_urls.created_at', 'users.name as created_by'])->paginate(10)->appends(['duration' => $request->input('duration')]);
         return view('pages.admin.generated_short_urls', compact('shortUrls'));
     }
     public function members()
