@@ -147,7 +147,7 @@ class SuperAdminController extends Controller
 
             DB::commit();
 
-            return view('pages.super_admin.dashboard');
+            return redirect()->route('sa.dashboard');
         } catch (\Exception $e) {
             DB::rollBack();
             Log::error('Error in invite process: ' . $e->getMessage());
