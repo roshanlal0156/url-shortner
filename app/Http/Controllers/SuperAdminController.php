@@ -114,7 +114,7 @@ class SuperAdminController extends Controller
                 DB::raw('COUNT(short_urls.short_url) as total_urls'),
                 DB::raw('SUM(short_urls.hits) as total_hits'),
                 DB::raw('COUNT(users.id) as total_users')
-            )
+            )->orderBy('users.created_at', 'desc')
             ->paginate(10);
 
         return view('pages.super_admin.clients', compact('clients'));
