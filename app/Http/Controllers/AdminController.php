@@ -154,7 +154,7 @@ class AdminController extends Controller
                     $row->short_url,
                     $row->long_url,
                     $row->hits,
-                    $row->createdBy->name,
+                    $row->created_by,
                     $row->created_at,
                 ]);
             }
